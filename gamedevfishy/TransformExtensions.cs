@@ -1,7 +1,6 @@
 using UnityEngine;
-using System;
 
-namespace gamedevfishy
+namespace GameDevFishy.ExtensionMethods
 {
     [System.Flags]
     public enum RotationAxis
