@@ -1,0 +1,6 @@
+{
+  "name": "UnityExtensionMethods",
+  "version": "1.0.0",
+  "description": "A collection of Unity extension methods for GameObject and Transform.",
+  "unity": "2022.3.x"
+}
