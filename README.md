@@ -1,5 +1,5 @@
 # Unity Extension Methods
-A collection of Unity extension methods for `Transform`, `GameObject`, `Vector3`, `Vector2`, `Quaternion`, `float`, `int`, `string`, and `bool`.
+A collection of Unity extension methods for `Transform`, `GameObject`, `RectTransform`, `MonoBehaviour`, `Vector3`, `Vector2`, `Quaternion`, `float`, `int`, `string`, and `bool`.
 
 ## Installation (via Unity Package Manager)
 1. In Unity, open **Window → Package Manager**.
@@ -12,7 +12,7 @@ A collection of Unity extension methods for `Transform`, `GameObject`, `Vector3`
 
 To pin to a specific version, append a tag or branch:
 ```
-https://github.com/gamedevfishy/Unity-Extension-Methods.git#v1.2.0
+https://github.com/gamedevfishy/Unity-Extension-Methods.git#v1.3.0
 ```
 
 ## Usage
@@ -51,6 +51,23 @@ Then call the extension methods directly on the relevant type.
 | `gameObject.SetActiveSafe(active)` | Sets active state only if it's actually different (avoids redundant calls). |
 | `gameObject.ToggleActive()` | Flips the object's active state. |
 | `gameObject.IsInLayerMask(mask)` | Checks if the object's layer is included in a `LayerMask`. |
+
+### `RectTransformExtensions`
+| Method | Description |
+|---|---|
+| `rectTransform.GetWorldRect()` | Returns the world space bounding box as a `Rect`. |
+| `rectTransform.Contains(other)` | Checks if this RectTransform's world bounds fully contain another's. |
+| `rectTransform.GetTop()` / `SetTop(top)` | Gets/sets the top offset relative to its parent. |
+| `rectTransform.GetBottom()` / `SetBottom(bottom)` | Gets/sets the bottom offset relative to its parent. |
+| `rectTransform.GetLeft()` / `SetLeft(left)` | Gets/sets the left offset relative to its parent. |
+| `rectTransform.GetRight()` / `SetRight(right)` | Gets/sets the right offset relative to its parent. |
+
+### `MonoBehaviourExtensions`
+| Method | Description |
+|---|---|
+| `monoBehaviour.ExecuteInSeconds(delay, callback)` | Runs a callback after a delay, using scaled time. Starts a coroutine internally. |
+| `monoBehaviour.ExecuteInSecondsRealtime(delay, callback)` | Runs a callback after a delay, using unscaled real-time. Starts a coroutine internally. |
+| `monoBehaviour.ExecuteNextFrame(callback)` | Runs a callback on the next frame. Starts a coroutine internally. |
 
 ### `Vector3Extensions`
 | Method | Description |

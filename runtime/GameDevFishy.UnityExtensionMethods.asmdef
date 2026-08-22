@@ -1,6 +1,6 @@
 {
     "name": "GameDevFishy.UnityExtensionMethods",
-    "rootNamespace": "GameDevFishy",
+    "rootNamespace": "GameDevFishy.ExtensionMethods",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
