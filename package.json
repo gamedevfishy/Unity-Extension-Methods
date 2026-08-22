@@ -1,14 +1,22 @@
 {
   "name": "com.gamedevfishy.unity-extension-methods",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "displayName": "Unity Extension Methods",
-  "description": "A collection of Unity extension methods for GameObject and Transform.",
+  "description": "A collection of Unity extension methods for Transform, Vector3, Vector2, float, int, string, and bool.",
   "unity": "2022.3",
+  "type": "library",
   "author": {
     "name": "Game Dev Fishy",
     "url": "https://github.com/gamedevfishy"
   },
-  "keywords": ["unity", "extension-methods", "gameobject", "transform"],
+  "keywords": [
+    "unity",
+    "extension-methods",
+    "transform",
+    "vector3",
+    "vector2",
+    "utilities"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
