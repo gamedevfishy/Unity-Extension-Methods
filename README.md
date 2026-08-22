@@ -1,5 +1,5 @@
 # Unity Extension Methods
-A collection of Unity extension methods for `Transform`, `Vector3`, `Vector2`, `float`, `int`, `string`, and `bool`.
+A collection of Unity extension methods for `Transform`, `GameObject`, `Vector3`, `Vector2`, `Quaternion`, `float`, `int`, `string`, and `bool`.
 
 ## Installation (via Unity Package Manager)
 1. In Unity, open **Window → Package Manager**.
@@ -12,7 +12,7 @@ A collection of Unity extension methods for `Transform`, `Vector3`, `Vector2`, `
 
 To pin to a specific version, append a tag or branch:
 ```
-https://github.com/gamedevfishy/Unity-Extension-Methods.git#v1.1.0
+https://github.com/gamedevfishy/Unity-Extension-Methods.git#v1.2.0
 ```
 
 ## Usage
@@ -39,6 +39,18 @@ Then call the extension methods directly on the relevant type.
 | `transform.GetPath(delimiter)` | Builds the full hierarchy path. |
 | `transform.SetParentAndReset(parent)` | Reparents and resets local transform. |
 | `transform.LookAt2D(target)` | Faces a target on the X/Y plane (2D). |
+
+### `GameObjectExtensions`
+| Method | Description |
+|---|---|
+| `gameObject.GetOrAddComponent<T>()` | Gets the component if present, otherwise adds and returns it. |
+| `gameObject.HasComponent<T>()` | Checks if a component is attached. |
+| `gameObject.SetLayerRecursively(layer)` | Sets the layer on this object and all children. |
+| `gameObject.Clone()` | Instantiates a copy of this object. |
+| `gameObject.Destroy(delay)` | Destroys the object, optionally after a delay. |
+| `gameObject.SetActiveSafe(active)` | Sets active state only if it's actually different (avoids redundant calls). |
+| `gameObject.ToggleActive()` | Flips the object's active state. |
+| `gameObject.IsInLayerMask(mask)` | Checks if the object's layer is included in a `LayerMask`. |
 
 ### `Vector3Extensions`
 | Method | Description |
@@ -68,6 +80,17 @@ Then call the extension methods directly on the relevant type.
 | `vector.Rotate(degrees)` | Rotates the vector by an angle in degrees. |
 | `a.Cross(b)` | 2D cross product (scalar). |
 
+### `QuaternionExtensions`
+| Method | Description |
+|---|---|
+| `rotation.With(x, y, z)` | Returns a copy with only the given Euler components overridden. |
+| `rotation.Add(x, y, z)` | Returns a copy with the given Euler components added. |
+| `a.IsApproximately(b, tolerance)` | Tolerance-based rotation equality check. |
+| `rotation.Inverse()` | Returns the inverse rotation. |
+| `rotation.Forward()` / `Right()` / `Up()` | Returns the corresponding direction vector for this rotation. |
+| `rotation.RotateTowardsPerSecond(target, degreesPerSecond)` | Frame-rate independent rotate towards target. |
+| `rotation.Flip180()` | Returns the rotation flipped 180° around Y. |
+
 ### `FloatExtensions`
 | Method | Description |
 |---|---|
@@ -93,6 +116,7 @@ Then call the extension methods directly on the relevant type.
 | `value.IsBitSet(bitIndex)` | Checks if a bit is set. |
 | `value.SetBit(bitIndex, state)` | Sets or clears a bit. |
 | `value.ToPercentOf(total)` | Returns value as a percentage of total. |
+| `layer.CreateFromLayer()` | Creates a single-layer `LayerMask` from a layer index. |
 
 ### `StringExtensions`
 | Method | Description |

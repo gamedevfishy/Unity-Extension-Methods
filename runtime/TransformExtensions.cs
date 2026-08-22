@@ -35,11 +35,17 @@ namespace GameDevFishy.ExtensionMethods
             transform.rotation = Quaternion.Euler(euler);
         }
 
+        /// <summary>
+        /// Returns true if this transform is within the given distance of a position.
+        /// </summary>
         public static bool IsWithinDistance(this Transform transform, Vector3 position, float distance)
         {
             return Vector3.Distance(transform.position, position) <= distance;
         }
 
+        /// <summary>
+        /// Returns true if this transform is farther than the given distance from a position.
+        /// </summary>
         public static bool IsBeyondDistance(this Transform transform, Vector3 position, float distance)
         {
             return Vector3.Distance(transform.position, position) > distance;
