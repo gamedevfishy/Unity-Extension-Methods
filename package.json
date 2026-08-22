@@ -1,6 +1,17 @@
 {
-  "name": "UnityExtensionMethods",
+  "name": "com.gamedevfishy.unity-extension-methods",
   "version": "1.0.0",
+  "displayName": "Unity Extension Methods",
   "description": "A collection of Unity extension methods for GameObject and Transform.",
-  "unity": "2022.3.x"
+  "unity": "2022.3",
+  "author": {
+    "name": "gamedevfishy",
+    "url": "https://github.com/gamedevfishy"
+  },
+  "keywords": ["unity", "extension-methods", "gameobject", "transform"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gamedevfishy/Unity-Extension-Methods.git"
+  }
 }
