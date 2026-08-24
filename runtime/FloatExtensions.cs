@@ -104,5 +104,69 @@ namespace GameDevFishy.ExtensionMethods
         {
             return Mathf.Abs(value) <= tolerance;
         }
+
+        /// <summary>
+/// Returns the largest integer less than or equal to the specified value.
+/// </summary>
+public static int FloorToInt(this float value)
+{
+    return Mathf.FloorToInt(value);
+}
+
+/// <summary>
+/// Returns the smallest integer greater than or equal to the specified value.
+/// </summary>
+public static int CeilToInt(this float value)
+{
+    return Mathf.CeilToInt(value);
+}
+
+/// <summary>
+/// Returns the nearest integer to the specified value.
+/// </summary>
+public static int RoundToInt(this float value)
+{
+    return Mathf.RoundToInt(value);
+}
+
+/// <summary>
+/// Returns the largest whole number less than or equal to the specified value.
+/// </summary>
+public static float Floor(this float value)
+{
+    return Mathf.Floor(value);
+}
+
+/// <summary>
+/// Returns the smallest whole number greater than or equal to the specified value.
+/// </summary>
+public static float Ceil(this float value)
+{
+    return Mathf.Ceil(value);
+}
+
+/// <summary>
+/// Returns the value rounded to the nearest whole number.
+/// </summary>
+public static float Round(this float value)
+{
+    return Mathf.Round(value);
+}
+
+/// <summary>
+/// Determines whether the specified value is greater than zero.
+/// </summary>
+public static bool IsPositive(this float value)
+{
+    return value > 0f;
+}
+
+/// <summary>
+/// Determines whether the specified value is less than zero.
+/// </summary>
+public static bool IsNegative(this float value)
+{
+    return value < 0f;
+}
     }
 }
