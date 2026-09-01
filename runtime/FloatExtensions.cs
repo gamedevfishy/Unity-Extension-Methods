@@ -168,5 +168,127 @@ namespace GameDevFishy.ExtensionMethods
         {
             return value < 0f;
         }
+
+        /// <summary>
+        /// Returns the absolute value.
+        /// </summary>
+        public static float Abs(this float value)
+        {
+            return Mathf.Abs(value);
+        }
+
+        /// <summary>
+        /// Clamps this value so it is never less than min (no upper bound).
+        /// </summary>
+        public static float ClampMin(this float value, float min)
+        {
+            return value < min ? min : value;
+        }
+
+        /// <summary>
+        /// Clamps this value so it is never greater than max (no lower bound).
+        /// </summary>
+        public static float ClampMax(this float value, float max)
+        {
+            return value > max ? max : value;
+        }
+
+        /// <summary>
+        /// Returns the value multiplied by itself.
+        /// </summary>
+        public static float Squared(this float value)
+        {
+            return value * value;
+        }
+
+        /// <summary>
+        /// Returns the value raised to the third power.
+        /// </summary>
+        public static float Cubed(this float value)
+        {
+            return value * value * value;
+        }
+
+        /// <summary>
+        /// Raises this value to the given exponent.
+        /// </summary>
+        public static float Pow(this float value, float exponent)
+        {
+            return Mathf.Pow(value, exponent);
+        }
+
+        /// <summary>
+        /// Returns the square root of this value.
+        /// </summary>
+        public static float Sqrt(this float value)
+        {
+            return Mathf.Sqrt(value);
+        }
+
+        /// <summary>
+        /// Wraps this angle (in degrees) to the range -180..180.
+        /// </summary>
+        public static float WrapAngle180(this float degrees)
+        {
+            float wrapped = degrees % 360f;
+            if (wrapped > 180f)
+                wrapped -= 360f;
+            else if (wrapped < -180f)
+                wrapped += 360f;
+
+            return wrapped;
+        }
+
+        /// <summary>
+        /// Wraps this angle (in degrees) to the range 0..360.
+        /// </summary>
+        public static float WrapAngle360(this float degrees)
+        {
+            float wrapped = degrees % 360f;
+            if (wrapped < 0f)
+                wrapped += 360f;
+
+            return wrapped;
+        }
+
+        /// <summary>
+        /// Linearly interpolates from this value towards target by t (0-1).
+        /// </summary>
+        public static float LerpTo(this float value, float target, float t)
+        {
+            return Mathf.Lerp(value, target, t);
+        }
+
+        /// <summary>
+        /// Returns the absolute difference between this value and another.
+        /// </summary>
+        public static float DeltaTo(this float value, float other)
+        {
+            return Mathf.Abs(value - other);
+        }
+
+        /// <summary>
+        /// Returns true if this value is NaN.
+        /// </summary>
+        public static bool IsNaN(this float value)
+        {
+            return float.IsNaN(value);
+        }
+
+        /// <summary>
+        /// Returns true if this value is positive or negative infinity.
+        /// </summary>
+        public static bool IsInfinity(this float value)
+        {
+            return float.IsInfinity(value);
+        }
+
+        /// <summary>
+        /// Treats this value as a 0-1 fraction and returns the 0-100 percentage.
+        /// </summary>
+        public static float ToPercent(this float value)
+        {
+            return value * 100f;
+        }
     }
 }
