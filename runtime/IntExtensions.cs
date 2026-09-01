@@ -85,5 +85,53 @@ namespace GameDevFishy.ExtensionMethods
         {
             return 1 << layer;
         }
+
+        /// <summary>
+        /// Returns the value multiplied by itself.
+        /// </summary>
+        public static int Squared(this int value)
+        {
+            return value * value;
+        }
+
+        /// <summary>
+        /// Returns the value raised to the third power.
+        /// </summary>
+        public static int Cubed(this int value)
+        {
+            return value * value * value;
+        }
+
+        /// <summary>
+        /// Clamps this value so it is never less than min (no upper bound).
+        /// </summary>
+        public static int ClampMin(this int value, int min)
+        {
+            return value < min ? min : value;
+        }
+
+        /// <summary>
+        /// Clamps this value so it is never greater than max (no lower bound).
+        /// </summary>
+        public static int ClampMax(this int value, int max)
+        {
+            return value > max ? max : value;
+        }
+
+        /// <summary>
+        /// Returns true if this value is a power of two.
+        /// </summary>
+        public static bool IsPowerOfTwo(this int value)
+        {
+            return value > 0 && (value & (value - 1)) == 0;
+        }
+
+        /// <summary>
+        /// Returns -1, 0, or 1 depending on the sign of the value.
+        /// </summary>
+        public static int Sign(this int value)
+        {
+            return (int)Mathf.Sign(value);
+        }
     }
 }

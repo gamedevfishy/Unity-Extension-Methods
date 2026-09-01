@@ -86,5 +86,86 @@ namespace GameDevFishy.ExtensionMethods
         {
             return center + Random.insideUnitSphere * radius;
         }
+
+        /// <summary>
+        /// Multiplies this vector component-wise by another.
+        /// </summary>
+        public static Vector3 Multiply(this Vector3 vector, Vector3 other)
+        {
+            return new Vector3(vector.x * other.x, vector.y * other.y, vector.z * other.z);
+        }
+
+        /// <summary>
+        /// Divides this vector component-wise by another.
+        /// </summary>
+        public static Vector3 Divide(this Vector3 vector, Vector3 other)
+        {
+            return new Vector3(vector.x / other.x, vector.y / other.y, vector.z / other.z);
+        }
+
+        /// <summary>
+        /// Returns the squared distance between this point and another.
+        /// Cheaper than DistanceTo when only comparing distances.
+        /// </summary>
+        public static float SqrDistanceTo(this Vector3 from, Vector3 to)
+        {
+            return (to - from).sqrMagnitude;
+        }
+
+        /// <summary>
+        /// Returns the midpoint between this vector and another.
+        /// </summary>
+        public static Vector3 Midpoint(this Vector3 a, Vector3 b)
+        {
+            return (a + b) * 0.5f;
+        }
+
+        /// <summary>
+        /// Returns a copy of this vector clamped to the given maximum length.
+        /// </summary>
+        public static Vector3 ClampMagnitude(this Vector3 vector, float maxLength)
+        {
+            return Vector3.ClampMagnitude(vector, maxLength);
+        }
+
+        /// <summary>
+        /// Returns true if this vector is approximately zero.
+        /// </summary>
+        public static bool IsZero(this Vector3 vector, float tolerance = 0.0001f)
+        {
+            return vector.sqrMagnitude <= tolerance * tolerance;
+        }
+
+        /// <summary>
+        /// Returns the angle in degrees between this vector and another.
+        /// </summary>
+        public static float AngleTo(this Vector3 from, Vector3 to)
+        {
+            return Vector3.Angle(from, to);
+        }
+
+        /// <summary>
+        /// Returns a copy with the X component replaced.
+        /// </summary>
+        public static Vector3 WithX(this Vector3 vector, float x)
+        {
+            return new Vector3(x, vector.y, vector.z);
+        }
+
+        /// <summary>
+        /// Returns a copy with the Y component replaced.
+        /// </summary>
+        public static Vector3 WithY(this Vector3 vector, float y)
+        {
+            return new Vector3(vector.x, y, vector.z);
+        }
+
+        /// <summary>
+        /// Returns a copy with the Z component replaced.
+        /// </summary>
+        public static Vector3 WithZ(this Vector3 vector, float z)
+        {
+            return new Vector3(vector.x, vector.y, z);
+        }
     }
 }

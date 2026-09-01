@@ -94,5 +94,57 @@ namespace GameDevFishy.ExtensionMethods
 
             return char.ToLowerInvariant(value[0]) + value.Substring(1);
         }
+
+        /// <summary>
+        /// Returns true if this string equals another, ignoring case.
+        /// </summary>
+        public static bool EqualsIgnoreCase(this string value, string other)
+        {
+            return string.Equals(value, other, System.StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
+        /// Converts this string from camelCase/snake_case to PascalCase.
+        /// </summary>
+        public static string ToPascalCase(this string value)
+        {
+            if (value.IsNullOrEmpty())
+                return value;
+
+            string camel = value.ToCamelCase();
+            return char.ToUpperInvariant(camel[0]) + camel.Substring(1);
+        }
+
+        /// <summary>
+        /// Returns a copy of this string with only the first character uppercased.
+        /// </summary>
+        public static string FirstCharToUpper(this string value)
+        {
+            if (value.IsNullOrEmpty())
+                return value;
+
+            return char.ToUpperInvariant(value[0]) + value.Substring(1);
+        }
+
+        /// <summary>
+        /// Wraps this string in a Unity rich text color tag.
+        /// e.g. "Score".Colorize("#FF0000") or "Score".Colorize("red")
+        /// </summary>
+        public static string Colorize(this string value, string hexOrColorName)
+        {
+            return $"<color={hexOrColorName}>{value}</color>";
+        }
+
+        /// <summary>
+        /// Returns true if this string is a plausibly valid email address.
+        /// Basic format check only, not full RFC validation.
+        /// </summary>
+        public static bool IsEmail(this string value)
+        {
+            if (value.IsNullOrEmpty())
+                return false;
+
+            return Regex.IsMatch(value, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        }
     }
 }

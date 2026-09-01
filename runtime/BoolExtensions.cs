@@ -11,14 +11,6 @@ namespace GameDevFishy.ExtensionMethods
         }
 
         /// <summary>
-        /// Converts this value to "Yes" or "No".
-        /// </summary>
-        public static string ToYesNo(this bool value)
-        {
-            return value ? "Yes" : "No";
-        }
-
-        /// <summary>
         /// Returns the negated value.
         /// </summary>
         public static bool Toggle(this bool value)
@@ -32,6 +24,28 @@ namespace GameDevFishy.ExtensionMethods
         public static int ToSign(this bool value)
         {
             return value ? 1 : -1;
+        }
+
+        /// <summary>
+        /// Invokes the given action if this value is true. Returns the original value for chaining.
+        /// </summary>
+        public static bool IfTrue(this bool value, System.Action action)
+        {
+            if (value)
+                action?.Invoke();
+
+            return value;
+        }
+
+        /// <summary>
+        /// Invokes the given action if this value is false. Returns the original value for chaining.
+        /// </summary>
+        public static bool IfFalse(this bool value, System.Action action)
+        {
+            if (!value)
+                action?.Invoke();
+
+            return value;
         }
     }
 }
