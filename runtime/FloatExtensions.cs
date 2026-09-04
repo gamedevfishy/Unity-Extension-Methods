@@ -67,6 +67,14 @@ namespace GameDevFishy.ExtensionMethods
         }
 
         /// <summary>
+        /// Clamps this value between min and max.
+        /// </summary>
+        public static float Clamp(this float value, float min, float max)
+        {
+            return Mathf.Clamp(value, min, max);
+        }
+        
+        /// <summary>
         /// Treats this value as a percentage (0-100) and returns the 0-1 fraction.
         /// </summary>
         public static float PercentToFraction(this float percent)
